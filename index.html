@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Login Activity</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    fieldset {
+      background-color: #ffffff;
+      border: 2px solid #b3c7d6;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    form h2 {
+      font-size: 18px;
+      color: #333333;
+      margin-bottom: 10px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #b3c7d6;
+      border-radius: 5px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      border-color: #6ca0d3;
+      box-shadow: 0 0 8px rgba(108, 160, 211, 0.3);
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    p a {
+      color: #007bff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    p a:hover {
+      color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <fieldset>
+    <form onsubmit="return validateForm()">
+      <h2>Username:</h2>
+      <input type="email" id="email1" required>
+      <h2>Password:</h2>
+      <input type="password" id="password1" required>
+      <br><br>
+      <button type="submit">Login</button>
+    </form>
+    <p><a href="forgot-password.html">Forgot password?</a></p>
+    <p><a href="signup.html">Signup</a></p>
+  </fieldset>
+
+  <script>
+    function validateForm() {
+      const email = document.getElementById('email1').value;
+      const password = document.getElementById('password1').value;
+
+      // Add additional validation logic if needed
+      if (email === '' || password === '') {
+        alert('Both fields are required.');
+        return false;
+      }
+
+      return true; // Submit the form
+    }
+  </script>
+</body>
+</html>
